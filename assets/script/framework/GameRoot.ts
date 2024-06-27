@@ -30,8 +30,8 @@ export class GameRoot extends Component {
     }
 
     start(){
-        if(cocosAnalytics){
-            cocosAnalytics.enableDebug(true);
-        }
+        // if(cocosAnalytics){
+        //     cocosAnalytics.enableDebug(true);
+        // }
     }
 }

@@ -101,7 +101,7 @@ declare namespace cocosAnalytics {
 			type: CATaskType
 		}): void;
 		function complete(info: {
-			taskID: strign
+			taskID: string
 		}): void;
 		function failed(info: {
 			taskID: string,
