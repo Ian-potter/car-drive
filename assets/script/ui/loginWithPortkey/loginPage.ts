@@ -14,9 +14,7 @@ const { ccclass, property } = _decorator;
  */
 
 @ccclass("loginPage")
-export class loginPage extends Component {
-  onLoad() {}
-}
+export class loginPage extends Component {}
 
 /**
  * [1] Class member could be defined like this.

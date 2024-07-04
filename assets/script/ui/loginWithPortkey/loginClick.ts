@@ -1,6 +1,7 @@
 import { _decorator, Button, Component, director } from "cc";
 import { LoginType, ResultModel } from "../../types";
 import { playerData } from "../../framework/playerData";
+import { LoginManager } from "../../login/LoginManager";
 const { ccclass } = _decorator;
 
 /**
@@ -22,21 +23,14 @@ export class loginClick extends Component {
     this.node.on(Button.EventType.CLICK, this.onSignIn, this);
   }
 
+  protected async start() {
+    this.onSignIn();
+  }
+
   async onSignIn() {
+    const isLogin = await LoginManager.instance.onSignIn();
+    if (!isLogin) return;
     director.loadScene("main", function () {});
-
-    // const result = await new Promise<ResultModel<string>>((rs, rj) => {
-    //   window.pk_openSignIn((result) => {
-    //     rs(result);
-    //   }, LoginType.None);
-    // });
-    // if (result.isSucc) {
-    //   playerData.instance.setCaAddress(result.data);
-    //   director.loadScene("main", function () {});
-
-    //   return true;
-    // }
-    // return false;
   }
 }
 

@@ -25,7 +25,7 @@ export class car extends Component {
 
     _isMoving = false;
     @property({displayName: '最大移动速度'})
-    public maxSpeed = 2;
+    public maxSpeed = 1.5;
 
     @property({displayName: '最小移动速度'})
     minSpeed = 0.2;
